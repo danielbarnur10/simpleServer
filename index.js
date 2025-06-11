@@ -1,6 +1,9 @@
 import axios from 'axios';
-const url = "https://zenquotes.io/api/today";
+const url = "https://zenquotes.io/api/random";
 
 export const getQuotes = async () => {
-    return await axios.get(url);
+    
+    const json = await axios.get(url);
+    
+    return json.data[0].q;
 }
